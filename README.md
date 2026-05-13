@@ -23,7 +23,6 @@
 
 ## 📁 Project Structure
 
-```text
 InovaPlant-AI/
 │
 ├── app.py                      # Main Flask application and AI prediction logic
