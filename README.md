@@ -108,3 +108,23 @@ tensorflow==2.15.0
 numpy==1.26.4
 Pillow==10.2.0
 Werkzeug==3.0.1
+
+Citation
+
+@article{plantvillage2016,
+  title   = {Using Deep Learning for Image-Based Plant Disease Detection},
+  author  = {Mohanty, Sharada P. and Hughes, David P. and Salathé, Marcel},
+  journal = {Frontiers in Plant Science},
+  year    = {2016},
+  volume  = {7},
+  doi     = {10.3389/fpls.2016.01419}
+}
+
+
+
+License
+
+This project is released under the MIT License.
+The PlantVillage dataset is available under CC0: Public Domain.
+Built for Kaggle · Deployable on Mobile & Web · Open Source
+⭐ Star this project if it helped you! 
