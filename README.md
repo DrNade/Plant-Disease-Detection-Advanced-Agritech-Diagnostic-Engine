@@ -8,18 +8,35 @@
 
 **InovaPlant AI** is a professional, web-based agricultural diagnostic tool powered by deep learning. It uses an **Ensemble Learning Approach (Dual Model Architecture)** to analyze plant leaf images, accurately identify 38 different plant diseases, and provide instant medical reports including symptoms, treatments, and local remedies.
 
+## 🚀 Key Features
+
+- 🌱 AI-powered plant disease detection
+- 🧠 Dual-model support for prediction reliability
+- 📸 Image upload and real-time scanning
+- 🖥️ Premium Flask-based web interface
+- 📂 38 plant disease class labels
+- 🌐 Ready for local deployment
+- 📱 Extendable for mobile and web applications
+- 🔬 Based on image-based plant disease detection research
+
 ---
 
-## ✨ Key Features
+## 📁 Project Structure
 
-* **🧠 Dual-Engine AI (Ensemble Learning):** Combines predictions from two different Convolutional Neural Networks (CNNs) to ensure maximum accuracy and eliminate false positives.
-* **📷 Live Camera & Gallery Support:** Seamlessly capture leaf images directly from your mobile/webcam or upload from your device.
-* **🩺 Professional Diagnostic Report:** Generates a complete report detailing the plant name, disease, exact symptoms, and recommended treatments (e.g., SSP Fertilizers, Fungicides).
-* **📊 Confidence Analysis Graph:** Visualizes the AI's confidence level in real-time using Chart.js.
-* **⏱️ Real-time Processing Tracking:** Displays the exact time taken for image processing and inference.
-* **💾 Local History Management:** Automatically saves your recent scans in the browser using LocalStorage.
-* **🌐 Dynamic Research Integration:** One-click automated Google Search generation for disease treatment and prevention in Urdu/English without relying on paid APIs.
-
+```text
+InovaPlant-AI/
+│
+├── app.py                      # Main Flask application and AI prediction logic
+├── best_phase1.h5              # Primary AI model
+├── plant_disease_model old.h5  # Secondary AI model
+├── labels.txt                  # 38 plant disease class definitions
+│
+├── templates/
+│   └── index.html              # Frontend user interface
+│
+├── uploads/                    # Temporary image upload directory
+├── requirements.txt            # Python dependencies
+└── README.md                   # Project documentation
 ---
 
 ## 🛠️ Tech Stack
@@ -31,85 +48,117 @@
 
 ---
 
-## 📂 Project Structure
+🧠 AI Models
 
-```text
-InovaPlant-AI/
-│
-├── app.py                      # Main Flask application and AI logic
-├── best_phase1.h5              # AI Model 1 (Primary Brain)
-├── plant_disease_model old.h5  # AI Model 2 (Secondary Brain)
-├── labels.txt                  # 38 Class definitions
-│
-├── templates/
-│   └── index.html              # Premium User Interface (UI)
-│
-├── uploads/                    # Temporary storage for scanned images
-└── requirements.txt            # Python dependencies
+This project uses trained deep learning models for plant disease classification:
 
-🚀 Installation & Setup Guide
+Model File	Purpose
+best_phase1.h5	Primary prediction model
+plant_disease_model old.h5	Secondary/backup prediction model
 
-Follow these steps to run the InovaPlant AI Server locally on your machine.
+The model predicts plant diseases using uploaded leaf images and maps the output to class names stored in labels.txt.
 
-1. Clone the repository
-Bash
 
-git clone [https://github.com/your-username/InovaPlant-AI.git](https://github.com/your-username/InovaPlant-AI.git)
+🎯 Supported Crops & Diseases
+
+The model supports 38 plant disease classes, including diseases from the following crops:
+
+🍎 Apple
+Apple Scab
+Black Rot
+Cedar Apple Rust
+Healthy Apple Leaf
+🌽 Corn / Maize
+Common Rust
+Northern Leaf Blight
+Cercospora Leaf Spot
+Healthy Corn Leaf
+🍅 Tomato
+Early Blight
+Late Blight
+Septoria Leaf Spot
+Spider Mites
+Bacterial Spot
+Leaf Mold
+Target Spot
+Mosaic Virus
+Yellow Leaf Curl Virus
+Healthy Tomato Leaf
+🥔 Potato
+Early Blight
+Late Blight
+Healthy Potato Leaf
+🍇 Other Supported Crops
+Grape
+Orange
+Peach
+Pepper
+Strawberry
+Soybean
+Squash
+Cherry
+Blueberry
+Raspberry
+⚙️ Installation & Setup
+
+Follow these steps to run the InovaPlant AI server locally.
+
+1. Clone the Repository
+git clone https://github.com/your-username/InovaPlant-AI.git
 cd InovaPlant-AI
 
-2. Create a Virtual Environment (Recommended)
-Bash
+Replace your-username with your actual GitHub username.
 
+2. Create a Virtual Environment
+
+Creating a virtual environment is recommended to keep dependencies isolated.
+
+Windows
 python -m venv venv
-source venv/bin/activate  # On Windows use: venv\Scripts\activate
+venv\Scripts\activate
 
+
+macOS / Linux
+python -m venv venv
+source venv/bin/activate
 3. Install Dependencies
-Bash
-
 pip install -r requirements.txt
-
 4. Run the Flask Server
-Bash
-
 python app.py
 
-The server will start on http://127.0.0.1:5000/. Open this link in your browser.
-🎯 Supported Crops & Diseases (38 Classes)
+After running the command, open your browser and visit:
 
-The model is highly trained on multiple crops including, but not limited to:
+http://127.0.0.1:5000/
+🖼️ How It Works
+Upload a plant leaf image.
+The Flask server preprocesses the image.
+The trained AI model predicts the disease class.
+The prediction result is displayed on the web interface.
+Users can use the result as an early guidance tool.
 
-    Apple: Scab, Black Rot, Cedar Apple Rust
+🧪 Example Use Cases
+Plant disease diagnosis
+Agriculture AI research
+Farmer support tools
+Smart farming projects
+Student AI and machine learning projects
+Flask + TensorFlow deployment practice
+📦 Requirements
 
-    Corn (Maize): Common Rust, Northern Leaf Blight, Cercospora
+Main dependencies used in this project:
 
-    Tomato & Potato: Early Blight, Late Blight, Septoria Leaf Spot, Spider Mites
-
-    Others: Grape, Orange, Peach, Pepper, Strawberry, Soybean, Squash.
-
-👨‍💻 Developed By
-
-Muhammad Nadeem Aslam IT Infrastructure & AI Development
-
-    Brand: InovaTech
-
-Disclaimer: This tool is designed to assist farmers and agronomists. It is advised to consult a certified agricultural professional before applying chemical treatments based solely on AI results.
+Flask
+flask-cors
+tensorflow
+numpy
+Pillow
+Werkzeug
+Full versions are available in the requirements.txt file.
 
 
----
+📚 Citation
 
-### 2. `requirements.txt` File
-
-GitHub par jab bhi koi Python project rakha jata hai, toh uske sath ek `requirements.txt` file lazmi hoti hai taake doosre log command chala kar zaroori software install kar sakein. Apne main folder mein ek file banayein jiska naam `requirements.txt` ho aur usme yeh paste kar dein:
-
-```text
-Flask==3.0.0
-flask-cors==4.0.0
-tensorflow==2.15.0
-numpy==1.26.4
-Pillow==10.2.0
-Werkzeug==3.0.1
-
-Citation
+This project is inspired by image-based plant disease detection research using deep learning.
 
 @article{plantvillage2016,
   title   = {Using Deep Learning for Image-Based Plant Disease Detection},
@@ -120,11 +169,31 @@ Citation
   doi     = {10.3389/fpls.2016.01419}
 }
 
+Reference:
+Mohanty, S. P., Hughes, D. P., & Salathé, M. (2016). Using Deep Learning for Image-Based Plant Disease Detection.
 
+👨‍💻 Developed By
 
-License
+Muhammad Nadeem Aslam
+IT Infrastructure & AI Development
+
+Brand: InovaTech
+
+⚠️ Disclaimer
+
+InovaPlant AI is designed as an assistive tool for plant disease identification.
+The predictions generated by this system should not be used as the only basis for agricultural treatment decisions.
+
+Farmers and users are advised to consult a certified agricultural expert, agronomist, or plant pathology professional before applying pesticides, fungicides, or chemical treatments.
+
+📄 License
 
 This project is released under the MIT License.
-The PlantVillage dataset is available under CC0: Public Domain.
-Built for Kaggle · Deployable on Mobile & Web · Open Source
-⭐ Star this project if it helped you! 
+
+The PlantVillage dataset is available under CC0: Public Domain, where applicable.
+
+⭐ Support
+
+If this project helped you, please consider giving it a star on GitHub.
+
+Built for Kaggle · Deployable on Web & Mobile · Open Source
